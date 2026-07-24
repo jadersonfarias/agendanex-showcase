@@ -181,29 +181,75 @@ Os principais perfis são:
 
 ### Página inicial
 
-_Imagem em breve._
+Apresentação pública do AgendaNex, com acesso à demonstração e aos principais recursos da plataforma.
 
-### Reserva online
+![Página inicial do AgendaNex](./assets/desktop/landing-page.png)
 
-_Imagem em breve._
+### Página pública do negócio
 
-### Painel administrativo
+Apresentação do negócio, horário de funcionamento, serviços disponíveis e orientação para realizar uma reserva online.
 
-_Imagem em breve._
+![Página pública do negócio](./assets/desktop/pagina-publica-negocio.png)
 
-### Gestão de serviços
+### Seleção de data e horário
 
-_Imagem em breve._
+Etapa do fluxo de reserva em que o cliente escolhe uma data e um dos horários disponíveis para o serviço selecionado.
+
+![Seleção de data e horário](./assets/desktop/selecao-data-horario.png)
+
+### Gestão do atendimento
+
+Detalhes administrativos do agendamento, com informações do cliente, serviço, data, status, profissional responsável e opções de reagendamento.
+
+![Detalhes administrativos do agendamento](./assets/desktop/detalhes-agendamento.png)
+
+### Dashboard administrativo
+
+Visão geral do negócio, com link público para reservas e resumo dos agendamentos por status.
+
+![Dashboard administrativo do AgendaNex](./assets/desktop/dashboard-agendanex.png)
+
+### Horários de funcionamento
+
+Configuração dos dias e períodos em que o negócio aceita agendamentos.
+
+![Configuração dos horários de funcionamento](./assets/desktop/horarios-funcionamento.png)
+
+### Bloqueios de agenda
+
+Controle dos períodos em que o negócio inteiro ou um profissional específico não estará disponível.
+
+![Gestão de bloqueios de agenda](./assets/desktop/bloqueios-agenda.png)
+
+### Criação de bloqueio
+
+Cadastro de bloqueio geral ou direcionado a um profissional, com data, horário e motivo.
+
+![Criação de bloqueio de agenda](./assets/desktop/novo-bloqueio.png)
 
 ### Gestão financeira
 
-_Imagem em breve._
+Resumo mensal com faturamento, custos informados, lucro estimado e ticket médio.
 
-### Admin Master
+![Gestão financeira do AgendaNex](./assets/desktop/financeiro-mensal.png)
 
-_Imagem em breve._
+### Receita por serviço
 
-## Objetivo profissional
+Distribuição do faturamento entre os serviços concluídos no período selecionado.
+
+![Receita por serviço](./assets/desktop/receita-por-servico.png)
+
+### Consulta pública de agendamentos
+
+Área pública para o cliente consultar seus próximos agendamentos usando o telefone informado na reserva.
+
+![Consulta pública de agendamentos](./assets/desktop/consulta-agendamentos.png)
+
+## Versão mobile
+
+O AgendaNex possui interface responsiva para que clientes e administradores possam utilizar a plataforma pelo celular.
+
+_As capturas da versão mobile serão adicionadas em breve._
 
 Este projeto demonstra minha experiência prática no desenvolvimento de aplicações fullstack, incluindo:
 
