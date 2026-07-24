@@ -249,7 +249,8 @@ Distribuição do faturamento entre os serviços concluídos no período selecio
 
 O AgendaNex possui interface responsiva para que clientes e administradores possam utilizar a plataforma pelo celular.
 
-![Versão mobile do AgendaNex](./assets/mobile/agendanex-mobile-showcase.png)
+![Versão mobile do AgendaNex](./assets/mobile/a_clean_presentation_mockup_graphic_layout_a_dark.png
+)
 
 Este projeto demonstra minha experiência prática no desenvolvimento de aplicações fullstack, incluindo:
 
