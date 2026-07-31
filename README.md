@@ -6,7 +6,7 @@ SaaS fullstack de agendamento online para pequenos negócios, com página públi
 > O código-fonte principal é proprietário e permanece em um repositório privado.
 
 ## Demo online
-🚀 Acessar AgendaNex = <a href="https://agenda-frontend-delta-blue.vercel.app" target="_blank">
+🚀 Acessar AgendaNex = <a href="https://www.agendanex.com.br" target="_blank">
   Abrir AgendaNex
 </a>
  
