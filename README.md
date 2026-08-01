@@ -183,19 +183,19 @@ Os principais perfis são:
 
 Apresentação pública do AgendaNex, com acesso à demonstração e aos principais recursos da plataforma.
 
-![Página inicial do AgendaNex](./assets/desktop/landing-page.png)
+![Página inicial do AgendaNex](./assets/desktop/landing-page.png.png)
 
 ### Página pública do negócio
 
 Apresentação do negócio, horário de funcionamento, serviços disponíveis e orientação para realizar uma reserva online.
 
-![Página pública do negócio](./assets/desktop/pagina-publica-negocio.png)
+![Página pública do negócio](./assets/desktop/pagina-publica-negocio.png.png)
 
 ### Seleção de data e horário
 
 Etapa do fluxo de reserva em que o cliente escolhe uma data e um dos horários disponíveis para o serviço selecionado.
 
-![Seleção de data e horário](./assets/desktop/selecao-data-horario.png)
+![Seleção de data e horário](./assets/desktop/selecao-data-horario.png.png)
 
 ### Gestão do atendimento
 
@@ -231,13 +231,13 @@ Cadastro de bloqueio geral ou direcionado a um profissional, com data, horário 
 
 Resumo mensal com faturamento, custos informados, lucro estimado e ticket médio.
 
-![Gestão financeira do AgendaNex](./assets/desktop/financeiro-mensal.png)
+![Gestão financeira do AgendaNex](./assets/desktop/financeiro-mensal.png.png)
 
 ### Receita por serviço
 
 Distribuição do faturamento entre os serviços concluídos no período selecionado.
 
-![Receita por serviço](./assets/desktop/receita-por-servico.png)
+![Gráfico financeiro](./assets/desktop/receita-por-servico.png.png)
 
 ### Consulta pública de agendamentos
 
