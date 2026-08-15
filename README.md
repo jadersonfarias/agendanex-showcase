@@ -22,6 +22,19 @@ Cada negócio possui seu próprio ambiente, com dados isolados das demais empres
 
 O projeto também foi criado como portfólio para demonstrar o desenvolvimento de uma aplicação fullstack real, envolvendo autenticação, autorização, regras de negócio, banco de dados, integrações externas e deploy em nuvem.
 
+## Destaques técnicos
+
+- SaaS multi-business com isolamento de dados por empresa;
+- autenticação NextAuth + JWT;
+- RBAC com OWNER, ADMIN e STAFF;
+- reserva protegida contra conflitos e concorrência;
+- disponibilidade baseada em profissional, serviço, duração, buffer e timezone;
+- PostgreSQL + Prisma com migrations versionadas;
+- armazenamento de imagens em Cloudflare R2;
+- CI com GitHub Actions;
+- testes automatizados no frontend e backend;
+- deploy independente de frontend, backend e banco.
+
 ## Problema resolvido
 
 Muitos pequenos negócios ainda controlam reservas por mensagens, anotações ou planilhas.
@@ -41,8 +54,14 @@ O AgendaNex centraliza essas informações em um único sistema.
 ### Área pública
 
 - página personalizada para cada negócio;
+- perfil público com informações do estabelecimento;
+- endereço e localização;
+- horário de funcionamento;
+- indicação de estabelecimento aberto ou fechado;
+- botão "Como chegar";
 - escolha de serviço;
-- escolha de profissional ou atribuição automática;
+- escolha de profissional compatível com o serviço;
+- opção de qualquer profissional com atribuição automática;
 - seleção de data e horário disponível;
 - criação de agendamento;
 - consulta segura de reservas;
@@ -55,16 +74,24 @@ O AgendaNex centraliza essas informações em um único sistema.
 - dashboard com resumo da operação;
 - gerenciamento de serviços;
 - gerenciamento de profissionais;
+- associação entre profissionais e serviços;
 - agenda com filtros por período, status e funcionário;
+- Modo Foco para operação da agenda diária;
+- visualização diária organizada por profissional;
 - reagendamento de atendimentos;
 - atribuição de profissionais;
 - bloqueio de horários;
 - visualização de conflitos;
 - gerenciamento de clientes;
 - controle de faltas;
+- identificação de clientes próximos ou atrasados para retorno;
+- reativação manual de clientes pelo WhatsApp;
+- mensagens de confirmação e lembrete pelo WhatsApp;
+- endereço do estabelecimento nas mensagens quando disponível;
 - relatório de faturamento;
 - controle de atendimentos agendados, concluídos, cancelados e não comparecimentos.
 
+  
 ### Administração da plataforma
 
 - painel exclusivo para Admin Master;
@@ -103,10 +130,12 @@ O AgendaNex centraliza essas informações em um único sistema.
 
 - Vercel
 - Render
-- Supabase
-- Resend/SMTP
+- Supabase PostgreSQL
+- Cloudflare R2
+- Resend / SMTP
+- GitHub Actions
+- Docker Compose
 - npm workspaces
-- Docker Compose no ambiente de desenvolvimento
 
 ## Arquitetura
 
@@ -177,7 +206,62 @@ Os principais perfis são:
 - planos vencidos podem bloquear operações de escrita;
 - consultas públicas retornam apenas os dados necessários.
 
+## Decisões de engenharia
+
+Durante o desenvolvimento do AgendaNex, algumas decisões técnicas foram importantes para manter segurança, consistência e escalabilidade da aplicação.
+
+Entre elas:
+
+- isolamento de dados entre diferentes empresas;
+- revalidação de permissões no backend;
+- controle de acesso baseado no vínculo do usuário com o negócio;
+- prevenção de reservas concorrentes;
+- vínculo entre profissionais e serviços;
+- atribuição automática de profissional quando necessário;
+- cálculo de disponibilidade considerando duração, buffer e bloqueios;
+- tratamento de timezone por estabelecimento;
+- preservação do histórico dos agendamentos;
+- uso de migrations versionadas no PostgreSQL;
+- separação entre frontend, API e persistência;
+- respostas públicas contendo apenas os dados necessários;
+- armazenamento externo de imagens por serviço S3-compatible.
+
+## Qualidade e testes
+
+O AgendaNex possui testes automatizados no frontend e backend cobrindo regras críticas da aplicação.
+
+Entre os cenários testados estão:
+
+- isolamento multi-business;
+- autenticação e autorização;
+- regras de acesso por perfil;
+- criação e disponibilidade de agendamentos;
+- conflitos de horários;
+- buffer entre atendimentos;
+- bloqueios de agenda;
+- relação entre profissionais e serviços;
+- fluxo de reserva pública;
+- faturamento e descontos;
+- funcionalidades administrativas;
+- componentes e fluxos do frontend.
+
+A integração contínua com GitHub Actions executa automaticamente:
+
+- lint;
+- typecheck;
+- testes automatizados;
+- build do backend;
+- build do frontend.
+
 ## Screenshots
+
+### Modo Foco da Agenda
+
+Visão operacional da agenda diária, organizada por profissional e preparada para uso durante o atendimento.
+
+Permite acompanhar rapidamente os horários do dia e executar ações como concluir, cancelar, registrar não comparecimento e entrar em contato com o cliente pelo WhatsApp.
+
+![Modo Foco da Agenda](./assets/desktop/modo-foco-agenda.png)
 
 ### Página inicial
 
@@ -252,20 +336,31 @@ O AgendaNex possui interface responsiva para que clientes e administradores poss
 ![Versão mobile do AgendaNex](./assets/mobile/a_clean_presentation_mockup_graphic_layout_a_dark.png
 )
 
-Este projeto demonstra minha experiência prática no desenvolvimento de aplicações fullstack, incluindo:
+## Sobre o desenvolvimento
 
-- desenvolvimento de interfaces responsivas;
-- criação de APIs REST;
-- modelagem de banco de dados;
+O AgendaNex foi desenvolvido como projeto de estudo profissional e produto SaaS real, permitindo aplicar na prática conceitos de frontend, backend, banco de dados, segurança, infraestrutura e regras de negócio.
+
+Durante o desenvolvimento trabalhei com:
+
+- interfaces responsivas utilizando React e Next.js;
+- criação de APIs REST com NestJS;
+- modelagem de dados com PostgreSQL e Prisma;
 - autenticação e autorização;
+- arquitetura multi-business;
 - implementação de regras de negócio;
-- integração entre frontend e backend;
-- deploy em ambientes de produção;
-- organização de projetos em monorepo;
-- controle de acesso por perfil;
-- desenvolvimento de uma aplicação SaaS multi-business.
+- testes automatizados;
+- integração contínua com GitHub Actions;
+- armazenamento de arquivos em cloud;
+- deploy de frontend e backend;
+- migrations em PostgreSQL;
+- debugging de problemas em ambientes reais;
+- evolução de funcionalidades baseada em cenários de uso reais.
 
-Atualmente busco uma oportunidade como Desenvolvedor Full Stack Júnior ou estágio em desenvolvimento de software.
+## Objetivo profissional
+
+Atualmente busco minha primeira oportunidade profissional na área de desenvolvimento de software, como **Desenvolvedor Full Stack Júnior, Desenvolvedor Front-End Júnior ou Estagiário em Desenvolvimento**.
+
+Tenho interesse em ambientes onde eu possa continuar evoluindo tecnicamente, colaborar com outros desenvolvedores e participar do desenvolvimento de aplicações reais.
 
 ## Objetivo comercial
 
@@ -292,6 +387,7 @@ A solução pode ser utilizada por:
 
 ## Próximas melhorias
 
+- confirmação e lembrete por WhatsApp ou e-mail;
 - integração com gateway de pagamento;
 - cobrança recorrente;
 - confirmação e lembrete por WhatsApp ou e-mail;
@@ -318,16 +414,17 @@ A etapa atual está focada em:
 - melhoria da apresentação para portfólio;
 - preparação para utilização por negócios reais.
 
-## Autor
+## Contato
 
 **Jaderson Farias**
 
-Desenvolvedor Full Stack em formação.
+Desenvolvedor Full Stack Júnior | Estudante de Análise e Desenvolvimento de Sistemas
 
-Projeto desenvolvido para portfólio profissional e futura comercialização.
+📍 Santa Catarina, Brasil
 
----
-
+- GitHub: [github.com/SEU-USUARIO](https://github.com/jadersonfarias)
+- LinkedIn: [linkedin.com/in/SEU-LINKEDIN](https://www.linkedin.com/in/jaderson-farias/)
+- E-mail: SEU_EMAIL
 ## Aviso de propriedade
 
 O AgendaNex é um projeto proprietário.
